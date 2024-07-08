@@ -49,6 +49,27 @@
                 return $this;
         }
 
+        function cadastrarLivro(Livro $liv){
+            include '../dao/LivroDAO.php';
+            $livdao=new LivroDAO();
+            $livdao->cadastrarLivro($this);
+        }
+        function listarPag(){
+            include '../dao/LivroDAO.php';
+            $livdao=new LivroDAO();
+            return $livdao->listarLivro();
+        }
+        function resgataID($codigo) {
+            include '../dao/LivroDAO.php';
+            $livdao=new LivroDAO();
+            return $livdao->resgataID($codigo);
+        }
+        function excluirP($codigo) {
+            include '../dao/LivroDAO.php';
+            $livdao=new LivroDAO();
+            return $livdao->excluirLivro($codigo);
+        }
+
     }
 
 ?>
