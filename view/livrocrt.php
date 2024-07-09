@@ -32,14 +32,14 @@
                 <br>
                 <label for='autor'>Autor</label>
                 <input type='text' name='autor' id='autor' value="$autor" required>
-                <br>
-            </fieldset>
-            <br>
+                </fieldset>
                 <input type='hidden' name='codigo' value="$id" ><br>
                 <input type='hidden' name='op' value='$operacao'><br>
             <input type='submit' value="$operacao" id='op'>
         </form>
-        <a href="index.html">Cancelar</a>
+        <div>
+        <button onclick="location.href='index.html'">Voltar</button>
+        </div>
     END;
     ?>
 </body>

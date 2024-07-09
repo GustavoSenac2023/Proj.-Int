@@ -34,5 +34,8 @@
         echo "No data found!";
     }
     ?>
+    <div>
+        <button onclick="location.href='index.html'">Voltar</button>
+    </div>
 </body>
 </html>

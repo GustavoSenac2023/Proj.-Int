@@ -48,7 +48,31 @@
 
                 return $this;
         }
-
+        function cadastrarPessoa(Pessoa $pes){
+                include '../dao/PessoaDAO.php';
+                $pesdao=new PessoaDAO();
+                $pesdao->cadastrarPessoa($this);
+            }
+            function listarPessoa(){
+                include '../dao/PessoaDAO.php';
+                $pesdao=new PessoaDAO();
+                return $pesdao->listarPessoa();
+            }
+            function resgataID($codigo) {
+                include '../dao/PessoaDAO.php';
+                $pesdao=new PessoaDAO();
+                return $pesdao->resgataID($codigo);
+            }
+            function excluirPessoa($codigo) {
+                include '../dao/PessoaDAO.php';
+                $pesdao=new PessoaDAO();
+                return $pesdao->excluirPessoa($codigo);
+            }
+            function alterarPessoa(Pessoa $pes) {
+                include '../dao/PessoaDAO.php';
+                $pesdao=new PessoaDAO();
+                return $pesdao->alterarPessoa($pes);
+            }
     }
 
 ?>

@@ -73,7 +73,7 @@
             include '../dao/LivroDAO.php';
             $livdao=new LivroDAO();
             return $livdao->alterarLivro($liv);
-    }
+        }
     }
 
 ?>
