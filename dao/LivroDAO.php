@@ -11,7 +11,7 @@
             $stmt->bindValue(':autor',$model->getAutor());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
-            //echo "<script>location.href='../view/index.html';</script>";
+            echo "<script>location.href='../view/index.html';</script>";
         }
         function listarLivro(){
             include 'Conexao.php';

@@ -22,6 +22,7 @@
         $autor=$_POST["autor"];
         $ctrl=new LivroCont();
         $ctrl->cadastrarLivro($titulo,$autor);
+        //print "<script>alert('$titulo')</script>";
     }
     function alterar(){
         $titulo=$_POST["titulo"];
