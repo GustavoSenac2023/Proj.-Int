@@ -25,10 +25,11 @@
         //print "<script>alert('$titulo')</script>";
     }
     function alterar(){
+        $id=$_POST["codigo"];
         $titulo=$_POST["titulo"];
         $autor=$_POST["autor"];
         $ctrl=new LivroCont();
-        $ctrl->alterarLivro($titulo,$autor);
+        $ctrl->alterarLivro($id,$titulo,$autor);
     }
     function excluir(){
         $id=$_REQUEST["codigo"];
@@ -36,7 +37,7 @@
         $ctrl->excluirLivro($id);
     }
     function listar() {
-        include '../view/';
+        include '../view/ListLivro.php';
     }
 
 ?>

@@ -35,6 +35,7 @@
             $sql="DELETE FROM livro WHERE id= '$codigo'";
             $res=$con->conn->query($sql);
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
+            echo "<script>location.href='../view/index.html';</script>";
             //echo "<script>location.href='../view/ListUsuario.php';</script>";
         }
 
@@ -49,6 +50,7 @@
             $stmt->bindValue(':autor',$livro->getAutor());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
+            echo "<script>location.href='../view/index.html';</script>";
             //echo "<script>location.href='../view/FormProdList.php?op=Listar';</script>";
         }
     }

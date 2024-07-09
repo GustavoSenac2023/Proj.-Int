@@ -54,7 +54,7 @@
             $livdao=new LivroDAO();
             $livdao->cadastrarLivro($this);
         }
-        function listarPag(){
+        function listarLivro(){
             include '../dao/LivroDAO.php';
             $livdao=new LivroDAO();
             return $livdao->listarLivro();
@@ -69,7 +69,11 @@
             $livdao=new LivroDAO();
             return $livdao->excluirLivro($codigo);
         }
-
+        function alterarLivro(Livro $liv) {
+            include '../dao/LivroDAO.php';
+            $livdao=new LivroDAO();
+            return $livdao->alterarLivro($liv);
+    }
     }
 
 ?>

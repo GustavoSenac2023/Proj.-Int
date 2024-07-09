@@ -21,7 +21,11 @@
             $liv = new Livro(null,null,null);
             return $liv->excluirLivro($codigo);
         }
-
+        public static function alterarLivro($id,$titulo,$autor) {
+            include '../model/Livro.php';
+            $liv=new Livro($id,$titulo,$autor);
+            return $liv->alterarLivro($liv);
+        }
 
 
     }
