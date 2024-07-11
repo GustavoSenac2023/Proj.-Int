@@ -78,6 +78,31 @@
                 return $this;
         }
 
+        function cadastrarRetirada(Retirada $ret){
+                include '../dao/RetiradaDAO.php';
+                $retdao=new RetiradaDAO();
+                $retdao->cadastrarRetirada($this);
+            }
+            function listarRetirada(){
+                include '../dao/RetiradaDAO.php';
+                $retdao=new RetiradaDAO();
+                return $retdao->listarRetirada();
+            }
+            function resgataID($codigo) {
+                include '../dao/RetiradaDAO.php';
+                $retdao=new RetiradaDAO();
+                return $retdao->resgataID($codigo);
+            }
+            function excluirRetirada($codigo) {
+                include '../dao/RetiradaDAO.php';
+                $retdao=new RetiradaDAO();
+                return $retdao->excluirRetirada($codigo);
+            }
+            function alterarRetirada(Retirada $ret) {
+                include '../dao/RetiradaDAO.php';
+                $retdao=new RetiradaDAO();
+                return $retdao->alterarRetirada($ret);
+            }
     }
 
 ?>

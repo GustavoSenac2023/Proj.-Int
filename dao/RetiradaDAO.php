@@ -1,14 +1,16 @@
 <?php
 
-    class PessoaDAO{
-        function cadastrarPessoa(Pessoa $model){
+    class RetiradaDAO{
+        function cadastrarRetirada(Retirada $model){
             include 'Conexao.php';
             $con=new Conexao();
             $con->fazConexao();
-            $sql="INSERT INTO pessoa (nome,genero) VALUES (:nome,:genero)";
+            $sql="INSERT INTO exemplar_retirada (status,data,fk_pessoa,fk_livro) VALUES (:status,:data,:fk_pessoa,:fk_livro)";
             $stmt=$con->conn->prepare($sql);
-            $stmt->bindValue(':nome',$model->getNome());
-            $stmt->bindValue(':genero',$model->getGenero());
+            $stmt->bindValue(':status',$model->getStatus());
+            $stmt->bindValue(':data',$model->getData());
+            $stmt->bindValue(':fk_pessoa',$model->getFkPessoa());
+            $stmt->bindValue(':fk_livro',$model->getFkLivro());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             echo "<script>location.href='../view/index.html';</script>";
@@ -17,7 +19,7 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
-            $sql="SELECT * FROM pessoa ORDER BY id";
+            $sql="SELECT * FROM exemplar_retirada ORDER BY id";
             return $con->conn->query($sql);
         }
         
@@ -25,14 +27,14 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
-            $sql="SELECT * FROM pessoa WHERE id='$codigo'";
+            $sql="SELECT * FROM exemplar_retirada WHERE id='$codigo'";
             return $con->conn->query($sql);
         }
         function excluirPessoa($codigo){
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
-            $sql="DELETE FROM pessoa WHERE id= '$codigo'";
+            $sql="DELETE FROM exemplar_retirada WHERE id= '$codigo'";
             $res=$con->conn->query($sql);
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             echo "<script>location.href='../view/index.html';</script>";
@@ -43,11 +45,12 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
-            $sql="UPDATE pessoa SET nome=:nome,genero=:genero WHERE id=:id";
+            $sql="UPDATE exemplar_retirada SET status=:status,data=:data,fk_pessoa=:fk_pessoa,fk_livro=:fk_livro WHERE id=:id";
             $stmt=$con->conn->prepare($sql);
-            $stmt->bindValue(':id',$model->getId());
-            $stmt->bindValue(':nome',$model->getNome());
-            $stmt->bindValue(':genero',$model->getGenero());
+            $stmt->bindValue(':status',$model->getStatus());
+            $stmt->bindValue(':data',$model->getData());
+            $stmt->bindValue(':fk_pessoa',$model->getFkPessoa());
+            $stmt->bindValue(':fk_livro',$model->getFkLivro());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             echo "<script>location.href='../view/index.html';</script>";
