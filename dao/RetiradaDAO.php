@@ -5,17 +5,17 @@
             include 'Conexao.php';
             $con=new Conexao();
             $con->fazConexao();
-            $sql="INSERT INTO exemplar_retirada (status,data,fk_pessoa,fk_livro) VALUES (:status,:data,:fk_pessoa,:fk_livro)";
+            $sql="INSERT INTO exemplar_retirada (status,data,fk_Pessoa_id,fk_Livro_id) VALUES (:status,:data,:fk_Pessoa_id,:fk_Livro_id)";
             $stmt=$con->conn->prepare($sql);
             $stmt->bindValue(':status',$model->getStatus());
             $stmt->bindValue(':data',$model->getData());
-            $stmt->bindValue(':fk_pessoa',$model->getFkPessoa());
-            $stmt->bindValue(':fk_livro',$model->getFkLivro());
+            $stmt->bindValue(':fk_Pessoa_id',$model->getFkPessoa());
+            $stmt->bindValue(':fk_Livro_id',$model->getFkLivro());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             echo "<script>location.href='../view/index.html';</script>";
         }
-        function listarPessoa(){
+        function listarRetirada(){
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
@@ -45,12 +45,12 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
-            $sql="UPDATE exemplar_retirada SET status=:status,data=:data,fk_pessoa=:fk_pessoa,fk_livro=:fk_livro WHERE id=:id";
+            $sql="UPDATE exemplar_retirada SET status=:status,data=:data,fk_Pessoa_id=:fk_Pessoa_id,fk_Livro_id=:fk_Livro_id WHERE id=:id";
             $stmt=$con->conn->prepare($sql);
             $stmt->bindValue(':status',$model->getStatus());
             $stmt->bindValue(':data',$model->getData());
-            $stmt->bindValue(':fk_pessoa',$model->getFkPessoa());
-            $stmt->bindValue(':fk_livro',$model->getFkLivro());
+            $stmt->bindValue(':fk_Pessoa_id',$model->getFkPessoa());
+            $stmt->bindValue(':fk_Livro_id',$model->getFkLivro());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             echo "<script>location.href='../view/index.html';</script>";
