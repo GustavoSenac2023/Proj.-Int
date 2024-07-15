@@ -1,9 +1,43 @@
-.container{
+.main{
     display: flex;
     flex-direction: column;
     top: 50%;
     left: 50%;
+    align-items: center;
     position: absolute;
     transform: translate(-50%, -50%);
-    background-color: aqua;
+    grid-area: middle;
 }
+body{
+    background-color: #596F62;
+}
+
+.navbar{
+    grid-area: header;
+    background-color: white;
+}
+
+.footer{
+    grid-area: bottom;
+    grid-row: 73;
+    background-color: white;
+}
+
+button{
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    width: 125px;
+}
+
+
+.grid{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "middle middle middle"
+    "bottom bottom bottom";
+    gap: 10px;
+    background-color: #596F62;
+}
+
