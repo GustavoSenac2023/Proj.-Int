@@ -23,7 +23,7 @@ body{
     background-color: white;
 }
 
-button{
+.act{
     border-radius: 10px;
     padding: 10px;
     border: none;
@@ -40,4 +40,45 @@ button{
     gap: 10px;
     background-color: #596F62;
 }
+
+table{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+table td{
+    border: 1px solid;
+    margin: 3px;
+}
+
+.cancel{
+    position: absolute;
+    top: 57%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.back{
+    position: absolute;
+    top: 57%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+}
+
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form input{
+    margin: 5px;
+}
+
 

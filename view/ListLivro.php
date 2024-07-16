@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 <body>
+    
+
 <?php
     include "../controller/LivroCont.php";
     $res = LivroCont::listarLivro();
@@ -35,7 +38,7 @@
     }
     ?>
     <div>
-        <button onclick="location.href='index.html'">Voltar</button>
+        <button class="back" onclick="location.href='index.html'">Voltar</button>
     </div>
 </body>
 </html>
