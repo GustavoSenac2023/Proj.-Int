@@ -50,7 +50,7 @@
             <input type='submit' value="$operacao" id='op'>
         </form>
         <div>
-        <button class='cancel' onclick="location.href='index.html'">Voltar</button>
+        <button class='cancelret' onclick="location.href='index.html'">Voltar</button>
         </div>
     END;
     ?>
