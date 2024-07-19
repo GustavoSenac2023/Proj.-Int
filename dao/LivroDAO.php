@@ -5,10 +5,11 @@
             include 'Conexao.php';
             $con=new Conexao();
             $con->fazConexao();
-            $sql="INSERT INTO livro (titulo,autor) VALUES (:titulo,:autor)";
+            $sql="INSERT INTO livro (titulo,autor,quant) VALUES (:titulo,:autor,:quant)";
             $stmt=$con->conn->prepare($sql);
             $stmt->bindValue(':titulo',$model->getTitulo());
             $stmt->bindValue(':autor',$model->getAutor());
+            $stmt->bindValue(':quant',$model->getQuant());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             echo "<script>location.href='../view/index.html';</script>";
@@ -43,11 +44,12 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
-            $sql="UPDATE livro SET titulo=:titulo,autor=:autor WHERE id=:id";
+            $sql="UPDATE livro SET titulo=:titulo,autor=:autor,quant=:quant WHERE id=:id";
             $stmt=$con->conn->prepare($sql);
             $stmt->bindValue(':id',$livro->getId());
             $stmt->bindValue(':titulo',$livro->getTitulo());
             $stmt->bindValue(':autor',$livro->getAutor());
+            $stmt->bindValue(':quant',$livro->getQuant());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             echo "<script>location.href='../view/index.html';</script>";

@@ -1,9 +1,9 @@
 <?php
 
     class LivroCont{
-        public static function cadastrarLivro($titulo,$autor){
+        public static function cadastrarLivro($id,$titulo,$autor,$quant){
             include '../model/Livro.php';
-            $liv=new Livro(null,$titulo,$autor);
+            $liv=new Livro($id,$titulo,$autor,$quant);
             $liv->cadastrarLivro($liv);
         }
         public static function listarLivro(){
@@ -21,9 +21,9 @@
             $liv = new Livro(null,null,null);
             return $liv->excluirLivro($codigo);
         }
-        public static function alterarLivro($id,$titulo,$autor) {
+        public static function alterarLivro($id,$titulo,$autor,$quant) {
             include '../model/Livro.php';
-            $liv=new Livro($id,$titulo,$autor);
+            $liv=new Livro($id,$titulo,$autor,$quant);
             return $liv->alterarLivro($liv);
         }
 

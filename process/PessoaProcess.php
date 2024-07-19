@@ -18,22 +18,23 @@
             break;
     }
     function incluir(){
+        $cpf=$_POST["cpf"];
         $nome=$_POST["nome"];
         $genero=$_POST["genero"];
         $ctrl=new PessoaCont();
-        $ctrl->cadastrarPessoa($nome,$genero);
+        $ctrl->cadastrarPessoa($cpf,$nome,$genero);
     }
     function alterar(){
-        $id=$_POST["codigo"];
+        $cpf=$_POST["codigo"];
         $nome=$_POST["nome"];
         $genero=$_POST["genero"];
         $ctrl=new PessoaCont();
-        $ctrl->alterarPessoa($id,$nome,$genero);
+        $ctrl->alterarPessoa($cpf,$nome,$genero);
     }
     function excluir(){
-        $id=$_REQUEST["codigo"];
+        $cpf=$_REQUEST["codigo"];
         $ctrl =new PessoaCont();
-        $ctrl->excluirPessoa($id);
+        $ctrl->excluirPessoa($cpf);
     }
     function listar() {
         include '../view/ListPessoa.php';

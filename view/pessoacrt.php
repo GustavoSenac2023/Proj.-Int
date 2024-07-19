@@ -16,7 +16,7 @@
         $row=$res->fetch(PDO::FETCH_OBJ);
         $nome=$row->nome;
         $genero=$row->genero;
-        $id=$row->id;
+        $id=$row->cpf;
         $operacao="Alterar";
     }else {
         $nome="";
@@ -28,6 +28,9 @@
     <form action='../process/PessoaProcess.php' method='post'>
             <fieldset>
                 <legend>Informações</legend>
+                <label for='cpf'>CPF</label>
+                <input type='text' name='cpf' id='cpf' value="$id" required>
+                <br>
                 <label for='nome'>Nome</label>
                 <input type='text' name='nome' id='nome' value="$nome" required>
                 <br>

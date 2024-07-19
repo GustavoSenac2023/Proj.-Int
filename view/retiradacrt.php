@@ -32,16 +32,18 @@
     <form action='../process/RetiradaProcess.php' method='post'>
             <fieldset>
                 <legend>Informações</legend>
-                <label for='status'>Status</label>
-                <input type='text' name='status' id='status' value="$status" required>
+                <input type="radio" id="option1" name="options" value="option1">
+                <label for="option1">Retirar</label><br>
+                <input type="radio" id="option2" name="options" value="option2">
+                <label for="option2">Devolver</label><br>
                 <br>
                 <label for='data'>Data</label>
                 <input type='text' name='data' id='data' value="$data" required>
                 <br>
-                <label for='fk_pessoa'>FK_Pessoa</label>
+                <label for='fk_pessoa'>Pessoa</label>
                 <input type='text' name='fk_pessoa' id='fk_pessoa' value="$fk_pessoa" required>
                 <br>
-                <label for='fk_livro'>FK_Livro</label>
+                <label for='fk_livro'>Livro</label>
                 <input type='text' name='fk_livro' id='fk_livro' value="$fk_livro" required>
                 <br>
                 </fieldset>
@@ -54,5 +56,6 @@
         </div>
     END;
     ?>
+    <script src="index.js"></script>
 </body>
 </html>

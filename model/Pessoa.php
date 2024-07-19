@@ -1,24 +1,24 @@
 <?php
 
     class Pessoa{
-        protected $id;
+        protected $cpf;
         protected $nome;
         protected $genero;
 
-        public function __construct($id,$nome,$genero) {
-            $this->id = $id;
+        public function __construct($cpf,$nome,$genero) {
+            $this->cpf = $cpf;
             $this->nome = $nome;
             $this->genero = $genero;
         }
 
-        public function getId()
+        public function getCpf()
         {
-                return $this->id;
+                return $this->cpf;
         }
 
-        public function setId($id): self
+        public function setCpf($cpf): self
         {
-                $this->id = $id;
+                $this->cpf = $cpf;
 
                 return $this;
         }

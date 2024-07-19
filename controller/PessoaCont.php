@@ -1,9 +1,9 @@
 <?php
 
     class PessoaCont{
-        public static function cadastrarPessoa($nome,$genero){
+        public static function cadastrarPessoa($cpf,$nome,$genero){
             include '../model/Pessoa.php';
-            $pes=new Pessoa(null,$nome,$genero);
+            $pes=new Pessoa($cpf,$nome,$genero);
             $pes->cadastrarPessoa($pes);
         }
         public static function listarPessoa(){
@@ -21,9 +21,9 @@
             $pes = new Pessoa(null,null,null);
             return $pes->excluirPessoa($codigo);
         }
-        public static function alterarPessoa($id,$nome,$genero) {
+        public static function alterarPessoa($cpf,$nome,$genero) {
             include '../model/Pessoa.php';
-            $pes=new Pessoa($id,$nome,$genero);
+            $pes=new Pessoa($cpf,$nome,$genero);
             return $pes->alterarPessoa($pes);
         }
 

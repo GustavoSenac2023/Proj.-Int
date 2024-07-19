@@ -5,8 +5,9 @@
             include 'Conexao.php';
             $con=new Conexao();
             $con->fazConexao();
-            $sql="INSERT INTO pessoa (nome,genero) VALUES (:nome,:genero)";
+            $sql="INSERT INTO pessoa (cpf,nome,genero) VALUES (:cpf,:nome,:genero)";
             $stmt=$con->conn->prepare($sql);
+            $stmt->bindValue(':cpf',$model->getCpf());
             $stmt->bindValue(':nome',$model->getNome());
             $stmt->bindValue(':genero',$model->getGenero());
             $res=$stmt->execute();
@@ -17,7 +18,7 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
-            $sql="SELECT * FROM pessoa ORDER BY id";
+            $sql="SELECT * FROM pessoa ORDER BY cpf";
             return $con->conn->query($sql);
         }
         
@@ -25,14 +26,14 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
-            $sql="SELECT * FROM pessoa WHERE id='$codigo'";
+            $sql="SELECT * FROM pessoa WHERE cpf='$codigo'";
             return $con->conn->query($sql);
         }
         function excluirPessoa($codigo){
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
-            $sql="DELETE FROM pessoa WHERE id= '$codigo'";
+            $sql="DELETE FROM pessoa WHERE cpf= '$codigo'";
             $res=$con->conn->query($sql);
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             echo "<script>location.href='../view/index.html';</script>";
@@ -43,9 +44,9 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
-            $sql="UPDATE pessoa SET nome=:nome,genero=:genero WHERE id=:id";
+            $sql="UPDATE pessoa SET nome=:nome,genero=:genero WHERE cpf=:cpf";
             $stmt=$con->conn->prepare($sql);
-            $stmt->bindValue(':id',$model->getId());
+            $stmt->bindValue(':cpf',$model->getCpf());
             $stmt->bindValue(':nome',$model->getNome());
             $stmt->bindValue(':genero',$model->getGenero());
             $res=$stmt->execute();

@@ -16,12 +16,14 @@
         $row=$res->fetch(PDO::FETCH_OBJ);
         $titulo=$row->titulo;
         $autor=$row->autor;
+        $quant=$row->quant;
         $id=$row->id;
         $operacao="Alterar";
     }else {
         $titulo="";
         $autor="";
         $id="";
+        $quant="";
         $operacao="Incluir";
     }
     print <<<END
@@ -30,6 +32,9 @@
                 <legend>Informações</legend>
                 <label for='titulo'>Titulo</label>
                 <input type='text' name='titulo' id='titulo' value="$titulo" required>
+                <br>
+                <label for='quant'>Quantidade</label>
+                <input type='text' name='quantidade' id='quantidade' value="$quant" required>
                 <br>
                 <label for='autor'>Autor</label>
                 <input type='text' name='autor' id='autor' value="$autor" required>

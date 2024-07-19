@@ -20,15 +20,17 @@
     function incluir(){
         $titulo=$_POST["titulo"];
         $autor=$_POST["autor"];
+        $quant=$_POST["quant"];
         $ctrl=new LivroCont();
-        $ctrl->cadastrarLivro($titulo,$autor);
+        $ctrl->cadastrarLivro($titulo,$autor,$quant);
     }
     function alterar(){
         $id=$_POST["codigo"];
         $titulo=$_POST["titulo"];
         $autor=$_POST["autor"];
+        $quant=$_POST["quant"];
         $ctrl=new LivroCont();
-        $ctrl->alterarLivro($id,$titulo,$autor);
+        $ctrl->alterarLivro($id,$titulo,$autor,$quant);
     }
     function excluir(){
         $id=$_REQUEST["codigo"];

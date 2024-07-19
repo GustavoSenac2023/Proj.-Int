@@ -74,7 +74,7 @@ table td{
 
 .cancelret{
     position: absolute;
-    top: 64%;
+    top: 60%;
     left: 55%;
     transform: translate(-50%, -50%);
 }

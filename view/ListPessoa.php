@@ -18,13 +18,13 @@
         print "<th>Genero</th>";
         while ($row=$res->fetch(PDO::FETCH_OBJ)) {
             print "<tr>";
-            print "<td>".$row->id."</td>";
+            print "<td>".$row->cpf."</td>";
             print "<td>".$row->nome."</td>";
             print "<td>".$row->genero."</td>";
             print "<td>
             <div class='btns'>
-            <button id='alt' onclick=\"location.href='../view/pessoacrt.php?op=Alterar&codigo=".$row->id."';\">Alterar</button>
-            <button id='del' onclick=\"location.href='../process/PessoaProcess.php?op=Excluir&codigo=".$row->id."';\">Excluir</button>
+            <button id='alt' onclick=\"location.href='../view/pessoacrt.php?op=Alterar&codigo=".$row->cpf."';\">Alterar</button>
+            <button id='del' onclick=\"location.href='../process/PessoaProcess.php?op=Excluir&codigo=".$row->cpf."';\">Excluir</button>
             </div>
             </td>";
             echo "</form>";

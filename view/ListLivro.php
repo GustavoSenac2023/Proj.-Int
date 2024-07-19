@@ -23,6 +23,7 @@
             print "<td>".$row->id."</td>";
             print "<td>".$row->titulo."</td>";
             print "<td>".$row->autor."</td>";
+            print "<td>".$row->quant."</td>";
             print "<td>
             <div class='btns'>
             <button id='alt' onclick=\"location.href='../view/livrocrt.php?op=Alterar&codigo=".$row->id."';\">Alterar</button>
