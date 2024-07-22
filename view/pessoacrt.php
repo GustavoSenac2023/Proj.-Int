@@ -37,7 +37,6 @@
                 <label for='genero'>Genero</label>
                 <input type='text' name='genero' id='genero' value="$genero" required>
                 </fieldset>
-                <input type='hidden' name='codigo' value="$id" ><br>
                 <input type='hidden' name='op' value='$operacao'><br>
             <input type='submit' value="$operacao" id='op'>
         </form>

@@ -32,9 +32,9 @@
     <form action='../process/RetiradaProcess.php' method='post'>
             <fieldset>
                 <legend>Informações</legend>
-                <input type="radio" id="option1" name="options" value="option1">
+                <input type="radio" id="option1" name="options" <?php if (isset($options) && $options=="ret")  $status='R';?> value="Retirada">
                 <label for="option1">Retirar</label><br>
-                <input type="radio" id="option2" name="options" value="option2">
+                <input type="radio" id="option2" name="options" value="dev">
                 <label for="option2">Devolver</label><br>
                 <br>
                 <label for='data'>Data</label>

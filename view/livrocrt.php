@@ -30,16 +30,18 @@
     <form action='../process/LivroProcess.php' method='post'>
             <fieldset>
                 <legend>Informações</legend>
+                <label for='id'>Código</label>
+                <input type='text' name='id' id='id' value="$id" required>
+                <br>
                 <label for='titulo'>Titulo</label>
                 <input type='text' name='titulo' id='titulo' value="$titulo" required>
                 <br>
                 <label for='quant'>Quantidade</label>
-                <input type='text' name='quantidade' id='quantidade' value="$quant" required>
+                <input type='text' name='quant' id='quant' value="$quant" required>
                 <br>
                 <label for='autor'>Autor</label>
                 <input type='text' name='autor' id='autor' value="$autor" required>
                 </fieldset>
-                <input type='hidden' name='codigo' value="$id" ><br>
                 <input type='hidden' name='op' value='$operacao'><br>
             <input type='submit' value="$operacao" id='op'>
         </form>

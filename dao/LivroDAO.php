@@ -5,8 +5,9 @@
             include 'Conexao.php';
             $con=new Conexao();
             $con->fazConexao();
-            $sql="INSERT INTO livro (titulo,autor,quant) VALUES (:titulo,:autor,:quant)";
+            $sql="INSERT INTO livro (id,titulo,autor,quant) VALUES (:id,:titulo,:autor,:quant)";
             $stmt=$con->conn->prepare($sql);
+            $stmt->bindValue(':id',$model->getId());
             $stmt->bindValue(':titulo',$model->getTitulo());
             $stmt->bindValue(':autor',$model->getAutor());
             $stmt->bindValue(':quant',$model->getQuant());

@@ -18,14 +18,15 @@
             break;
     }
     function incluir(){
+        $id=$_POST["id"];
         $titulo=$_POST["titulo"];
         $autor=$_POST["autor"];
         $quant=$_POST["quant"];
         $ctrl=new LivroCont();
-        $ctrl->cadastrarLivro($titulo,$autor,$quant);
+        $ctrl->cadastrarLivro($id,$titulo,$autor,$quant);
     }
     function alterar(){
-        $id=$_POST["codigo"];
+        $id=$_POST["id"];
         $titulo=$_POST["titulo"];
         $autor=$_POST["autor"];
         $quant=$_POST["quant"];

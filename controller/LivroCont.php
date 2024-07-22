@@ -8,7 +8,7 @@
         }
         public static function listarLivro(){
             include '../model/Livro.php';
-            $liv=new Livro(null,null,null);
+            $liv=new Livro(null,null,null,null);
             return $liv->listarLivro();
         }
         public static function resgataID($codigo) {

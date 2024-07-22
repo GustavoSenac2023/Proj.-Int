@@ -18,12 +18,17 @@
             break;
     }
     function incluir(){
-        $status=$_POST["status"];
-        $data=$_POST["data"];
+        $status=$_POST["options"];
+        $data=$status;
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        $date=$_POST["data"];
         $fk_pessoa=$_POST["fk_pessoa"];
         $fk_livro=$_POST["fk_livro"];
         $ctrl=new RetiradaCont();
-        $ctrl->cadastrarRetirada($status,$data,$fk_pessoa,$fk_livro);
+        echo $status;
+        $ctrl->cadastrarRetirada($data,$date,$fk_pessoa,$fk_livro);
     }
     function alterar(){
         $id=$_POST["codigo"];
