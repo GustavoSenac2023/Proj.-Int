@@ -7,9 +7,23 @@
     <title>Document</title>
 </head>
 <body>
+    
 <?php
     include "../controller/RetiradaCont.php";
-    $res = RetiradaCont::listarRetirada();
+    function prompt($prompt_msg){
+        echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script>");
+
+        $answer = "<script type='text/javascript'> document.write(answer); </script>";
+        return($answer);
+    }
+    $prompt_msg = "Command";
+    $in = prompt($prompt_msg);
+    echo $in;
+    if($in!=""){
+        $res=RetiradaCont::pesquisarRetirada($in);
+    }
+    
+    //$res = RetiradaCont::listarRetirada();
     $qtd=$res->rowCount();
     if ($qtd>0) {
         print "<table class='table table-hover table striped table bordered'>";
@@ -21,8 +35,8 @@
         while ($row=$res->fetch(PDO::FETCH_OBJ)) {
             print "<tr>";
             print "<td>".$row->id."</td>";
-            print "<td>".$row->status."</td>";
-            print "<td>".$row->data."</td>";
+            print "<td>".$row->STATUS."</td>";
+            print "<td>".$row->DATA."</td>";
             print "<td>".$row->fk_Pessoa_id."</td>";
             print "<td>".$row->fk_Livro_id."</td>";
             print "<td>

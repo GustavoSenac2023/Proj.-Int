@@ -19,7 +19,7 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
-            $sql="SELECT * FROM livro ORDER BY id";
+            $sql="SELECT * FROM livro ORDER BY id LIMIT 10";
             return $con->conn->query($sql);
         }
         

@@ -19,7 +19,14 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
-            $sql="SELECT * FROM exemplar_retirada ORDER BY id";
+            $sql="SELECT * FROM exemplar_retirada ORDER BY id LIMIT 10";
+            return $con->conn->query($sql);
+        }
+        function pesquisarRetirada($com){
+            include 'Conexao.php';
+            $con= new Conexao();
+            $con->fazConexao();
+            $sql="SELECT * FROM exemplar_retirada WHERE STATUS='$com'";
             return $con->conn->query($sql);
         }
         

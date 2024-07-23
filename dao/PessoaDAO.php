@@ -18,7 +18,7 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
-            $sql="SELECT * FROM pessoa ORDER BY cpf";
+            $sql="SELECT * FROM pessoa ORDER BY cpf LIMIT 10";
             return $con->conn->query($sql);
         }
         

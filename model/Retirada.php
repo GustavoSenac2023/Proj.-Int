@@ -103,6 +103,12 @@
                 $retdao=new RetiradaDAO();
                 return $retdao->alterarRetirada($ret);
             }
+            function pesquisarRetirada($com){
+                include '../dao/RetiradaDAO.php';
+                $retdao=new RetiradaDAO();
+                return $retdao->pesquisarRetirada($com);
+            }
+
     }
 
 ?>

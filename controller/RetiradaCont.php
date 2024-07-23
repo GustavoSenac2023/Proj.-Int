@@ -11,6 +11,13 @@
             $ret=new Retirada(null,null,null,null,null);
             return $ret->listarRetirada();
         }
+
+        public static function pesquisarRetirada($com){
+            include '../model/Retirada.php';
+            $ret=new Retirada(null,null,null,null,null);
+            return $ret->pesquisarRetirada($com);
+        }
+
         public static function resgataID($codigo) {
             include '../model/Retirada.php';
             $ret = new Retirada(null,null,null,null,null);

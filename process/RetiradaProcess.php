@@ -19,16 +19,16 @@
     }
     function incluir(){
         $status=$_POST["options"];
-        $data=$status;
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
+        if ($status=="ret") {
+            $status="R";
+        }else{
+            $status="D";
+        }
         $date=$_POST["data"];
         $fk_pessoa=$_POST["fk_pessoa"];
         $fk_livro=$_POST["fk_livro"];
         $ctrl=new RetiradaCont();
-        echo $status;
-        $ctrl->cadastrarRetirada($data,$date,$fk_pessoa,$fk_livro);
+        $ctrl->cadastrarRetirada($status,$date,$fk_pessoa,$fk_livro);
     }
     function alterar(){
         $id=$_POST["codigo"];

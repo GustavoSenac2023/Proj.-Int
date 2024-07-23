@@ -32,13 +32,13 @@
     <form action='../process/RetiradaProcess.php' method='post'>
             <fieldset>
                 <legend>Informações</legend>
-                <input type="radio" id="option1" name="options" <?php if (isset($options) && $options=="ret")  $status='R';?> value="Retirada">
+                <input type="radio" id="option1" name="options" value="ret">
                 <label for="option1">Retirar</label><br>
                 <input type="radio" id="option2" name="options" value="dev">
                 <label for="option2">Devolver</label><br>
                 <br>
                 <label for='data'>Data</label>
-                <input type='text' name='data' id='data' value="$data" required>
+                <input type='date' name='data' id='data' value="$data" required>
                 <br>
                 <label for='fk_pessoa'>Pessoa</label>
                 <input type='text' name='fk_pessoa' id='fk_pessoa' value="$fk_pessoa" required>
