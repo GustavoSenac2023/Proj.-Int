@@ -34,9 +34,10 @@ body{
 .grid{
     display: grid;
     grid-template-areas: 
-    "header header header"
-    "middle middle middle"
-    "bottom bottom bottom";
+    "header header header header"
+    "middle middle middle middle"
+    "midbot midbot midbot midbot"
+    "bottom bottom bottom bottom";
     gap: 10px;
     background-color: #596F62;
 }
@@ -58,7 +59,7 @@ table td{
 
 .cancel{
     position: absolute;
-    top: 57%;
+    top: 65%;
     left: 55%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
@@ -88,6 +89,13 @@ form{
 
 form input{
     margin: 5px;
+}
+
+.fsearch{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 

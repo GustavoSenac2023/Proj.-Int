@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index2.css">
     <title>Document</title>
 </head>
 <body>
     
+
 <?php
     include "../controller/RetiradaCont.php";
     function prompt($prompt_msg){
@@ -16,13 +17,20 @@
         $answer = "<script type='text/javascript'> document.write(answer); </script>";
         return($answer);
     }
-    $prompt_msg = "Command";
-    $in = prompt($prompt_msg);
-    echo $in;
+    //$prompt_msg = "Command";
+    //$in = prompt($prompt_msg);
+    //echo $in;
+
+    print <<<END
+        <form action="../view/ListRetirada.php" method="post" class="fsearch">
+        <label for="search">Pesquisa por Status</label>
+        <input type="text" name="pesquisa" id="pesquisa">
+        <button type="submit">Pesquisar</button>
+        </form>
+    END;
+    $in=$_POST["pesquisa"];
     if($in!=""){
         $res=RetiradaCont::pesquisarRetirada($in);
-    }
-    
     //$res = RetiradaCont::listarRetirada();
     $qtd=$res->rowCount();
     if ($qtd>0) {
@@ -52,6 +60,7 @@
     }else {
         echo "No data found!";
     }
+}
     ?>
     <div>
         <button class="back" onclick="location.href='index.html'">Voltar</button>
