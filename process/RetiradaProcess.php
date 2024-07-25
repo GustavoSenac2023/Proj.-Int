@@ -32,7 +32,12 @@
     }
     function alterar(){
         $id=$_POST["codigo"];
-        $status=$_POST["status"];
+        $status=$_POST["options"];
+        if ($status=="ret") {
+            $status="R";
+        }else{
+            $status="D";
+        }
         $data=$_POST["data"];
         $fk_pessoa=$_POST["fk_pessoa"];
         $fk_livro=$_POST["fk_livro"];

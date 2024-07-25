@@ -28,6 +28,7 @@
         <button type="submit">Pesquisar</button>
         </form>
     END;
+    error_reporting(E_ERROR | E_PARSE);
     $in=$_POST["pesquisa"];
     if($in!=""){
         $res=RetiradaCont::pesquisarRetirada($in);

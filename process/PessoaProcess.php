@@ -20,14 +20,24 @@
     function incluir(){
         $cpf=$_POST["cpf"];
         $nome=$_POST["nome"];
-        $genero=$_POST["genero"];
+        $genero=$_POST["options"];
+        if ($genero=="m") {
+            $genero="M";
+        }else{
+            $genero="F";
+        }
         $ctrl=new PessoaCont();
         $ctrl->cadastrarPessoa($cpf,$nome,$genero);
     }
     function alterar(){
         $cpf=$_POST["codigo"];
         $nome=$_POST["nome"];
-        $genero=$_POST["genero"];
+        $genero=$_POST["options"];
+        if ($genero=="m") {
+            $genero="M";
+        }else{
+            $genero="F";
+        }
         $ctrl=new PessoaCont();
         $ctrl->alterarPessoa($cpf,$nome,$genero);
     }

@@ -78,7 +78,7 @@
             $livdao=new LivroDAO();
             return $livdao->resgataID($codigo);
         }
-        function excluirP($codigo) {
+        function excluirLivro($codigo) {
             include '../dao/LivroDAO.php';
             $livdao=new LivroDAO();
             return $livdao->excluirLivro($codigo);

@@ -37,7 +37,7 @@
             $sql="SELECT * FROM exemplar_retirada WHERE id='$codigo'";
             return $con->conn->query($sql);
         }
-        function excluirPessoa($codigo){
+        function excluirRetirada($codigo){
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
@@ -48,12 +48,13 @@
             //echo "<script>location.href='../view/ListUsuario.php';</script>";
         }
 
-        function alterarPessoa(Pessoa $model){
+        function alterarRetirada(Retirada $model){
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
             $sql="UPDATE exemplar_retirada SET status=:status,data=:data,fk_Pessoa_id=:fk_Pessoa_id,fk_Livro_id=:fk_Livro_id WHERE id=:id";
             $stmt=$con->conn->prepare($sql);
+            $stmt->bindValue(':id',$model->getId());
             $stmt->bindValue(':status',$model->getStatus());
             $stmt->bindValue(':data',$model->getData());
             $stmt->bindValue(':fk_Pessoa_id',$model->getFkPessoa());

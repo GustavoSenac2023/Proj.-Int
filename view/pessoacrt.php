@@ -34,8 +34,10 @@
                 <label for='nome'>Nome</label>
                 <input type='text' name='nome' id='nome' value="$nome" required>
                 <br>
-                <label for='genero'>Genero</label>
-                <input type='text' name='genero' id='genero' value="$genero" required>
+                <input type="radio" id="option1" name="options" value="m">
+                <label for="option1">Masculino</label><br>
+                <input type="radio" id="option2" name="options" value="f">
+                <label for="option2">Feminino</label><br>
                 </fieldset>
                 <input type='hidden' name='op' value='$operacao'><br>
             <input type='submit' value="$operacao" id='op'>

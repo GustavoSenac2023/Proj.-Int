@@ -18,6 +18,7 @@
         print "<th>#</th>";
         print "<th>Titulo</th>";
         print "<th>Autor</th>";
+        print "<th>Quantidade</th>";
         while ($row=$res->fetch(PDO::FETCH_OBJ)) {
             print "<tr>";
             print "<td>".$row->id."</td>";

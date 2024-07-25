@@ -14,8 +14,8 @@
         $res=RetiradaCont::resgataID($_REQUEST["codigo"]);
         $qtd=$res->rowCount();
         $row=$res->fetch(PDO::FETCH_OBJ);
-        $status=$row->status;
-        $data=$row->data;
+        //$status=$row->status;
+        //$data=$row->data;
         $fk_pessoa=$row->fk_Pessoa_id;
         $fk_livro=$row->fk_Livro_id;
         $id=$row->id;
