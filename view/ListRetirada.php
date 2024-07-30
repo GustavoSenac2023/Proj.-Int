@@ -47,7 +47,7 @@
 
     print <<<END
         <form action="../view/ListRetirada.php" method="post" class="fsearch">
-        <label for="search">Pesquisa por Status</label>
+        <label for="search">Pesquisa por Status(D/R)</label>
         <input type="text" name="pesquisa" id="pesquisa">
         <button type="submit">Pesquisar</button>
         </form>

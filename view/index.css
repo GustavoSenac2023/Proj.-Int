@@ -59,7 +59,7 @@ table td{
 
 .cancel{
     position: absolute;
-    top: 60%;
+    top: 62%;
     left: 55%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
@@ -75,9 +75,10 @@ table td{
 
 .cancelret{
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 55%;
     transform: translate(-50%, -50%);
+    border-radius: 5px;
 }
 
 form{
