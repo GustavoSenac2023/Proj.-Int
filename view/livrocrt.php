@@ -56,7 +56,7 @@
             <fieldset>
                 <legend>Informações</legend>
                 <label for='id'>Código</label>
-                <input type='text' name='id' id='id' value="$id" required>
+                <input type='text' name='id' id='cod' value="$id" required>
                 <br>
                 <label for='titulo'>Titulo</label>
                 <input type='text' name='titulo' id='titulo' value="$titulo" required>

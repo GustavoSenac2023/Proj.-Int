@@ -57,9 +57,9 @@
     <form action='../process/RetiradaProcess.php' method='post'>
             <fieldset>
                 <legend>Informações</legend>
-                <input type="radio" id="option1" name="options" value="ret">
+                <input type="radio" id="optionA" name="options" value="ret">
                 <label for="option1">Retirar</label><br>
-                <input type="radio" id="option2" name="options" value="dev">
+                <input type="radio" id="optionB" name="options" value="dev">
                 <label for="option2">Devolver</label><br>
                 <br>
                 <label for='data'>Data</label>

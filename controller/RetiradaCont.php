@@ -25,7 +25,7 @@
         }
         public static function excluirRetirada($codigo) {
             include '../model/Retirada.php';
-            $ret = new Pessoa(null,null,null,null,null);
+            $ret = new Retirada(null,null,null,null,null);
             return $ret->excluirRetirada($codigo);
         }
         public static function alterarRetirada($id,$status,$data,$fk_pessoa,$fk_livro) {

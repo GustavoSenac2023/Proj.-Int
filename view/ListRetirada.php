@@ -49,7 +49,7 @@
         <form action="../view/ListRetirada.php" method="post" class="fsearch">
         <label for="search">Pesquisa por Status(D/R)</label>
         <input type="text" name="pesquisa" id="pesquisa">
-        <button type="submit">Pesquisar</button>
+        <button type="submit" id="op">Pesquisar</button>
         </form>
     END;
     error_reporting(E_ERROR | E_PARSE);
